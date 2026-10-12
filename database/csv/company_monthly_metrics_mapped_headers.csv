@@ -1,0 +1,9 @@
+Period,Company ID,Company,Sector,Revenue (actual),Revenue (plan),EBITDA (actual),EBITDA (plan),Source,Source updated
+2026-09,apex-field-services,Apex Field Services,Field services,10.8,11.2,1.62,1.90,Monthly management accounts (fictional),2026-10-03
+2026-09,cobalt-software,Cobalt Software,Software,6.9,6.6,1.60,1.50,Monthly management accounts (fictional),2026-10-03
+2026-09,lumen-healthcare,Lumen Healthcare Services,Healthcare services,13.4,14.7,1.88,2.25,Monthly management accounts (fictional),2026-10-03
+2026-09,meridian-distribution,Meridian Distribution,Distribution,18.1,18.8,2.17,2.35,Monthly management accounts (fictional),2026-10-03
+2026-09,northstar-components,Northstar Components,Industrial components,24.6,24.0,3.20,3.12,Monthly management accounts (fictional),2026-10-03
+2026-09,ridgeway-foods,Ridgeway Foods,Food production,21.5,21.2,1.66,,Monthly management accounts (fictional),2026-10-03
+2026-09,sterling-packaging,Sterling Packaging,Packaging,9.9,10.0,1.27,1.30,Monthly management accounts (fictional),2026-10-03
+2026-09,vantage-retail,Vantage Retail Group,Specialty retail,7.5,7.6,-0.25,-0.30,Monthly management accounts (fictional),2026-10-03

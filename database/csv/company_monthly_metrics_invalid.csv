@@ -1,0 +1,19 @@
+company_id,company_name,sector,reporting_period,revenue_actual,revenue_plan,ebitda_actual,ebitda_plan,source_name,source_updated_at
+,Northstar Components,Industrial components,2026-10,24.9,24.3,3.25,3.15,Monthly management accounts (fictional),2026-11-03
+cobalt-software,,Software,2026-10,7.1,6.8,1.66,1.55,Monthly management accounts (fictional),2026-11-03
+apex-field-services,Apex Field Services,Field services,,10.7,11.3,1.60,1.92,Monthly management accounts (fictional),2026-11-03
+meridian-distribution,Meridian Distribution,Distribution,2026-13,18.0,18.9,2.10,2.36,Monthly management accounts (fictional),2026-11-03
+lumen-healthcare,Lumen Healthcare Services,Healthcare services,Oct 2026,13.3,14.8,1.85,2.27,Monthly management accounts (fictional),2026-11-03
+ridgeway-foods,Ridgeway Foods,Food production,2026-10,,21.4,1.68,1.62,Monthly management accounts (fictional),2026-11-03
+sterling-packaging,Sterling Packaging,Packaging,2026-10,n/a,10.1,1.29,1.31,Monthly management accounts (fictional),2026-11-03
+vantage-retail,Vantage Retail Group,Specialty retail,2026-10,7.6,7.7,$-0.22,-0.28,Monthly management accounts (fictional),2026-11-03
+northstar-components,Northstar Components,Industrial components,2026-10,"24,900",24.3,3.25,3.15,Monthly management accounts (fictional),2026-11-03
+cobalt-software,Cobalt Software,Software,2026-11,7.2,6.9,1.66m,1.57,Monthly management accounts (fictional),2026-12-03
+harbor-logistics,Harbor Logistics,,2026-10,9.4,9.0,1.05,1.10,Monthly management accounts (fictional),2026-11-03
+apex-field-services,Apex Field Services,Field services,2026-11,10.9,11.3,1.70,1.92,Monthly management accounts (fictional),2026-12-03
+apex-field-services,Apex Field Services,Field services,2026-11,11.0,11.3,1.74,1.92,Monthly management accounts (fictional),2026-12-03
+meridian-distribution,Meridian Distribution,Distribution,2026-11,-18.2,18.9,2.15,2.36,Monthly management accounts (fictional),2026-12-03
+lumen-healthcare,Lumen Healthcare Services,Healthcare services,2026-11,13.5,14.8,1.90,2.27,Monthly management accounts (fictional),2026-12-32
+ridgeway-foods,Ridgeway Foods,Food production,2026-11,21.6,21.4,1.70,1.62,Monthly management accounts (fictional),2026-12-03,extra
+sterling-packaging,Sterling Packaging,Packaging,2026-11,10.0,10.1,12.40,1.31,Monthly management accounts (fictional),2026-12-03
+northstar-components,Northstar Components,Industrial components,2026-11,25.1,0,3.30,3.20,Monthly management accounts (fictional),2026-12-03

@@ -1,0 +1,1146 @@
+﻿FLOWNETIC — PORTFOLIO INTELLIGENCE
+
+
+Engineering Build Specification & Product Requirements
+
+
+Product: Flownetic Portfolio Intelligence
+Build priority: Working sales demonstration first
+Primary audience: Private equity Operating Partners, Heads of Portfolio Operations, Heads of Value Creation, and portfolio-company leadership
+Initial environment: Demo environment using fictional data
+Production status: Not production-ready until the security and deployment requirements are implemented and verified
+
+
+---
+
+
+1. PRODUCT OBJECTIVE
+
+
+Build an interactive portfolio intelligence platform that helps a private equity team monitor multiple portfolio companies, identify material performance variances, investigate potential causes, assign corrective actions, and track whether those actions produce measurable results.
+
+
+The platform should answer five questions:
+
+
+1. Which portfolio companies require attention?
+2. Which financial or operating metrics are below plan?
+3. What evidence could explain the variance?
+4. What action should be taken, and who owns it?
+5. Did the action produce a verified improvement?
+
+
+The platform must demonstrate a complete workflow, not just display charts.
+
+
+Core workflow
+
+
+Import data → Validate data → Calculate KPIs → Detect exceptions → Investigate evidence → Review proposed actions → Track execution → Verify outcomes.
+
+
+Scope boundary
+
+
+The initial product is a portfolio-performance monitoring and decision-support prototype. It is not a complete fund-accounting system, investment due-diligence engine, autonomous financial adviser, or replacement for every system used by a PE firm.
+
+
+Do not add unrelated modules until the core workflow works reliably.
+
+
+2. REQUIRED APPLICATION STRUCTURE
+
+
+Build a polished, responsive web application with these primary navigation items:
+
+
+1. Overview
+2. Portfolio Companies
+3. Exceptions
+4. Investigations
+5. Actions
+6. Impact Tracking
+7. Data & Methodology
+8. Settings
+
+
+Include a persistent header with:
+
+
+- Flownetic wordmark
+- Current portfolio or demo workspace
+- Reporting period selector
+- Data freshness indicator
+- User profile or demo-user menu
+
+
+The entire application must be navigable without refreshing the page unnecessarily.
+
+
+All major buttons, filters, table rows, tabs, charts, forms and menus must perform their intended action.
+
+
+3. VISUAL DESIGN
+
+
+Use a restrained, premium, enterprise-finance aesthetic.
+
+
+Design direction
+
+
+- Primary palette: near-black, white and neutral greys.
+- Use a muted accent colour sparingly.
+- Use red, amber and green only where they communicate status or severity.
+- Use a clean sans-serif font.
+- Use consistent spacing, borders and alignment.
+- Use restrained shadows and subtle transitions.
+- Avoid oversized gradients, cartoon illustrations, excessive rounded cards and decorative animations.
+- Prioritise readability and information density.
+
+
+Layout
+
+
+Desktop:
+
+
+- Fixed or collapsible left navigation.
+- Main content area with a consistent maximum width.
+- KPI cards at the top of overview screens.
+- Charts and tables below.
+- Detail panels or drawers for investigation and editing.
+
+
+Mobile:
+
+
+- Responsive navigation.
+- Stacked KPI cards.
+- Horizontally scrollable tables when necessary.
+- Forms and action controls must remain usable.
+
+
+Use accessible contrast, visible focus states, semantic labels and keyboard navigation.
+
+
+4. SCREEN ONE — PORTFOLIO OVERVIEW
+
+
+Purpose: Give an Operating Partner an immediate view of portfolio performance.
+
+
+Top-level KPI cards
+
+
+Display:
+
+
+- Number of portfolio companies.
+- Number of companies requiring attention.
+- Number of open high-priority exceptions.
+- Number of overdue actions.
+- Number of completed actions awaiting outcome verification.
+
+
+Every count must be derived from the underlying demo data, not hardcoded independently.
+
+
+Clicking a KPI card must navigate to the corresponding filtered view.
+
+
+Portfolio performance table
+
+
+Include the following columns:
+
+
+- Company name.
+- Sector.
+- Reporting period.
+- Revenue actual.
+- Revenue plan.
+- Revenue variance percentage.
+- EBITDA actual.
+- EBITDA plan.
+- EBITDA variance percentage.
+- Actual EBITDA margin.
+- Planned EBITDA margin.
+- Margin variance in percentage points.
+- Performance status.
+- Open exceptions.
+- Last data update.
+
+
+Requirements:
+
+
+- Sortable columns.
+- Search by company name.
+- Filter by sector, status and reporting period.
+- Pagination or another usable approach for larger portfolios.
+- Click a company row to open its detail page.
+- Show a clear empty state when no results match.
+- Clearly distinguish missing values from zero values.
+
+
+Portfolio charts
+
+
+Include:
+
+
+1. Revenue actual versus plan by company.
+2. EBITDA actual versus plan by company.
+3. Distribution of companies by status.
+4. Exception count by severity.
+
+
+Charts must update when filters or reporting periods change.
+
+
+Do not imply that data is real-time unless a live integration exists. Show the latest available reporting period and timestamp.
+
+
+5. SCREEN TWO — PORTFOLIO COMPANY DETAIL
+
+
+Selecting a company opens its dedicated profile.
+
+
+Company header
+
+
+Display:
+
+
+- Company name.
+- Sector.
+- Reporting period.
+- Overall status.
+- Last data update.
+- Number of active exceptions.
+- Number of open actions.
+
+
+Financial performance
+
+
+Display:
+
+
+- Revenue actual versus plan.
+- EBITDA actual versus plan.
+- Actual versus planned EBITDA margin.
+- Historical monthly or quarterly trends where historical observations exist.
+
+
+Charts must use actual stored observations. Do not invent historical periods to make charts appear complete.
+
+
+Operating metrics
+
+
+Design a flexible metric framework so additional metrics can be configured later.
+
+
+Possible metrics include:
+
+
+- Revenue growth.
+- Gross margin.
+- EBITDA margin.
+- Customer retention.
+- Headcount.
+- Accounts receivable days.
+- Inventory levels.
+- Cash conversion measures.
+
+
+Only show metrics for which the relevant data and definitions exist.
+
+
+Company tabs
+
+
+- Performance
+- Exceptions
+- Investigations
+- Actions
+- Data History
+
+
+The tabs must display records associated with the selected company.
+
+
+6. SCREEN THREE — DATA IMPORT AND VALIDATION
+
+
+The first prototype must support CSV upload.
+
+
+Upload experience
+
+
+Provide:
+
+
+1. File selection or drag-and-drop.
+2. CSV parsing.
+3. Preview of uploaded rows.
+4. Column mapping.
+5. Data validation.
+6. Error reporting.
+7. Confirmation before import.
+8. Import summary.
+
+
+Initial supported data fields
+
+
+Use a documented schema with fields such as:
+
+
+- company_id
+- company_name
+- sector
+- reporting_period
+- revenue_actual
+- revenue_plan
+- ebitda_actual
+- ebitda_plan
+- source_name
+- source_updated_at
+
+
+Keep the schema extensible.
+
+
+Validation rules
+
+
+Check:
+
+
+- Required columns.
+- Valid reporting-period format.
+- Numeric values in numeric columns.
+- Duplicate company-period records.
+- Missing required values.
+- Invalid or unsupported values.
+- Unexpected currency or unit conventions.
+- Plan values that are zero or missing when calculating percentages.
+
+
+Never silently discard invalid records.
+
+
+Display errors with row numbers, field names and understandable explanations.
+
+
+Support cancelling an import. Prevent accidental duplicate imports or clearly explain how duplicates are handled.
+
+
+Data provenance
+
+
+For every imported observation, store:
+
+
+- Source file or source identifier.
+- Import timestamp.
+- Reporting period.
+- Importing user or demo actor.
+- Original value where appropriate.
+- Validation status.
+
+
+For the demo, use sample CSV files and visibly fictional company names.
+
+
+7. SCREEN FOUR — KPI CALCULATION ENGINE
+
+
+Financial calculations must be deterministic and testable. The language model must never be responsible for calculating official KPI values.
+
+
+Revenue variance percentage
+
+
+Revenue variance = Revenue actual − Revenue plan.
+
+
+Revenue variance percentage = (Revenue actual − Revenue plan) / Revenue plan × 100.
+
+
+EBITDA variance percentage
+
+
+EBITDA variance percentage = (EBITDA actual − EBITDA plan) / EBITDA plan × 100.
+
+
+EBITDA margin
+
+
+Actual EBITDA margin = EBITDA actual / Revenue actual × 100.
+
+
+Planned EBITDA margin = EBITDA plan / Revenue plan × 100.
+
+
+Margin variance = Actual EBITDA margin − Planned EBITDA margin, expressed in percentage points.
+
+
+Rules
+
+
+- Use decimal-safe financial calculations where appropriate.
+- Handle zero denominators explicitly.
+- Represent missing values as missing, not zero.
+- Apply consistent currency and rounding rules.
+- Retain full precision internally; round for display.
+- Show the calculation definition in the methodology view.
+- Unit-test every formula.
+
+
+Initial exception thresholds
+
+
+For the prototype, use configurable example thresholds:
+
+
+- High-priority exception: EBITDA variance at or below −10%.
+- Optional revenue exception: revenue variance at or below −5%.
+- Warning status: a less severe configurable deviation.
+- On-track status: no configured threshold breached.
+
+
+These thresholds are demo assumptions, not universal PE standards.
+
+
+Use a central rules configuration. Do not hardcode thresholds in multiple components.
+
+
+The same input data and rules must always produce the same calculated metrics and exception decisions.
+
+
+8. SCREEN FIVE — EXCEPTIONS
+
+
+Purpose: Show what needs attention and why it was flagged.
+
+
+Exceptions table
+
+
+Include:
+
+
+- Exception ID.
+- Company.
+- Reporting period.
+- Metric.
+- Actual value.
+- Plan or benchmark.
+- Variance.
+- Severity.
+- Detection rule.
+- Status.
+- Created date.
+- Assigned owner, if applicable.
+
+
+Filters
+
+
+Support filtering by:
+
+
+- Severity.
+- Company.
+- Metric.
+- Reporting period.
+- Status.
+- Owner.
+
+
+Exception details
+
+
+Clicking an exception opens a detail view showing:
+
+
+1. The metric and reporting period.
+2. Actual value and comparison value.
+3. Exact variance calculation.
+4. Rule and threshold that triggered the alert.
+5. Source data and freshness.
+6. Related historical observations, if available.
+7. Existing investigations and actions.
+
+
+Users should be able to acknowledge an exception, assign it for review, mark it resolved with a reason, or reopen it where appropriate.
+
+
+An exception must not be marked resolved merely because someone opened it.
+
+
+9. SCREEN SIX — AI-ASSISTED INVESTIGATION
+
+
+Purpose: Help an analyst organise evidence and investigate why a company is underperforming.
+
+
+Investigation input
+
+
+The AI may receive:
+
+
+- Relevant company KPIs.
+- Variance calculations.
+- Available historical observations.
+- User-provided notes.
+- Relevant uploaded documents, if document processing has been implemented.
+- Source and data-freshness metadata.
+
+
+Only provide data the current user is authorised to access.
+
+
+Required output structure
+
+
+Return a structured investigation containing:
+
+
+1. Executive summary.
+2. Confirmed observations.
+3. Potential explanations.
+4. Evidence supporting each explanation.
+5. Evidence that is missing.
+6. Questions for the company management team.
+7. Recommended next investigative steps.
+8. Suggested actions for human review.
+9. Confidence or evidence-strength assessment.
+10. Data limitations.
+
+
+Mandatory distinction
+
+
+Separate confirmed facts from hypotheses.
+
+
+For example:
+
+
+Confirmed observation:
+“Revenue was 3.6% below plan in the selected reporting period.”
+
+
+Potential explanation:
+“Lower sales volume could contribute to the variance, but sales-volume data has not been supplied.”
+
+
+The system must not claim that customer churn, pricing, labour costs, supply-chain problems or any other factor caused a variance unless the available evidence supports that conclusion.
+
+
+User controls
+
+
+Provide buttons to:
+
+
+- Generate investigation.
+- Regenerate analysis.
+- Add analyst notes.
+- Edit the investigation.
+- Save investigation.
+- Create a proposed action.
+- Mark the investigation reviewed.
+
+
+Require a human to review and approve important recommendations.
+
+
+Technical requirements
+
+
+- Use a structured response schema.
+- Validate the model response before rendering or saving.
+- Handle timeouts and API failures.
+- Provide loading, error and retry states.
+- Never expose a secret API key in browser code.
+- Do not send confidential client data to an external AI service without the client's approval and appropriate privacy/security controls.
+- Log relevant investigation metadata without unnecessarily logging sensitive financial content.
+
+
+If no model API is configured, show a clearly labelled mock investigation. Never pretend a mock response was generated by a live AI model.
+
+
+10. SCREEN SEVEN — ACTION TRACKER
+
+
+Purpose: Turn investigation findings into accountable work.
+
+
+Action fields
+
+
+- Action ID.
+- Company.
+- Related exception.
+- Related investigation.
+- Action title.
+- Description.
+- Priority.
+- Assigned owner or role.
+- Created date.
+- Due date.
+- Status.
+- Completion notes.
+- Evidence attachment or reference, if implemented.
+- Verification status.
+
+
+Status workflow
+
+
+Proposed → Approved → In progress → Completed → Outcome verification → Verified or Reopened.
+
+
+Allow cancellation with a recorded reason.
+
+
+Required interactions
+
+
+- Create an action from an investigation.
+- Create an action manually.
+- Edit action details.
+- Assign or reassign an owner.
+- Change priority and due date.
+- Update status.
+- Add progress notes.
+- Filter overdue and high-priority actions.
+- Open the related company and exception.
+- Record completion evidence.
+- Reopen an action when verification fails.
+
+
+All changes must persist after refresh. For the prototype, local persistence is acceptable only if clearly scoped to a single-user demo. Prefer a small database if the engineer can implement it reliably.
+
+
+11. SCREEN EIGHT — IMPACT TRACKING
+
+
+Purpose: Show whether actions were followed by measurable changes.
+
+
+Impact record
+
+
+Each record must include:
+
+
+- Related company.
+- Related action.
+- Metric.
+- Baseline value.
+- Baseline period.
+- Target value.
+- Target period.
+- Observed value.
+- Observation period.
+- Measurement source.
+- Verification status.
+- Reviewer.
+- Notes.
+
+
+Rules
+
+
+- Clearly distinguish targets, estimates and observed results.
+- Do not label projected savings as realised savings.
+- Do not attribute every improvement to an action without evidence.
+- Show missing or unverified data honestly.
+- Permit the outcome to be marked “not yet measurable.”
+- Retain a record of changes to the measurement.
+
+
+Example
+
+
+A proposed action may target an improvement in EBITDA margin. The dashboard should show the baseline, the target, the latest observed margin and whether the result has been verified.
+
+
+Do not claim financial benefits without an identified calculation method and supporting observations.
+
+
+12. SCREEN NINE — DATA & METHODOLOGY
+
+
+Include a dedicated area that explains how the dashboard reaches its conclusions.
+
+
+Display:
+
+
+- Reporting period.
+- Last import timestamp.
+- Data source.
+- KPI definitions.
+- Variance formulas.
+- Exception thresholds.
+- Missing data.
+- Validation errors.
+- Known limitations.
+- AI investigation status.
+- Whether information is observed, estimated or hypothetical.
+
+
+Allow a user to inspect why an exception was triggered.
+
+
+A sophisticated buyer must be able to trace a displayed metric back to its underlying observation and calculation.
+
+
+13. DEMO DATA
+
+
+Use the following fictional sample companies for the initial build.
+
+
+All values below are illustrative USD figures in millions for one monthly reporting period.
+
+
+Company A — Northstar Components
+
+
+- Revenue actual: 24.6
+- Revenue plan: 24.0
+- EBITDA actual: 3.20
+- EBITDA plan: 3.12
+
+
+Company B — Apex Field Services
+
+
+- Revenue actual: 10.8
+- Revenue plan: 11.2
+- EBITDA actual: 1.62
+- EBITDA plan: 1.90
+
+
+Company C — Meridian Distribution
+
+
+- Revenue actual: 18.1
+- Revenue plan: 18.8
+- EBITDA actual: 2.17
+- EBITDA plan: 2.35
+
+
+The dashboard must calculate all displayed variances and margins from these inputs.
+
+
+Apex should demonstrate the exception workflow because its EBITDA is materially below plan. The system should flag the metric based on the configured threshold.
+
+
+Do not invent a cause for Apex's performance. The investigation should explicitly request additional evidence, such as sales volume, pricing, operating expenses or customer data.
+
+
+Show a persistent notice:
+
+
+“DEMO ENVIRONMENT — ALL COMPANY DATA IS FICTIONAL.”
+
+
+14. SUGGESTED TECHNICAL ARCHITECTURE
+
+
+The engineer may select the stack they can support best, but the architecture must be maintainable.
+
+
+Frontend
+
+
+A modern React and TypeScript application, or an equivalent maintainable framework.
+
+
+Use reusable components for:
+
+
+- KPI cards.
+- Data tables.
+- Charts.
+- Filters.
+- Status indicators.
+- Forms.
+- Drawers and modals.
+- Empty, loading and error states.
+
+
+Backend
+
+
+Use a server-side API for:
+
+
+- Data import and validation.
+- KPI calculations.
+- Exception generation.
+- Persistence.
+- Investigation orchestration.
+- Action management.
+- Impact records.
+- Authentication and authorisation when required.
+
+
+Database
+
+
+A relational database is appropriate for production. Use stable identifiers and relationships between companies, observations, exceptions, investigations, actions and impact records.
+
+
+AI integration
+
+
+Keep model-provider credentials on the server. Use schema-validated inputs and outputs, access controls and failure handling.
+
+
+Charts
+
+
+Use a maintained charting library. Charts must be driven by application data and update when the selected filters change.
+
+
+Configuration
+
+
+Keep reporting periods, thresholds, currency and other business rules configurable rather than scattering values through the code.
+
+
+Environment separation
+
+
+Maintain separate demo and production configurations. Demo data must not be mixed into a client's production workspace.
+
+
+15. DATA MODEL
+
+
+Implement these core entities, with additional fields as required.
+
+
+PortfolioCompany
+
+
+- id
+- name
+- sector
+- currency
+- status
+- created_at
+- updated_at
+
+
+KPIObservation
+
+
+- id
+- company_id
+- metric_key
+- actual_value
+- plan_value
+- reporting_period
+- source_id
+- imported_at
+- validation_status
+
+
+Exception
+
+
+- id
+- company_id
+- observation_id
+- metric_key
+- rule_id
+- severity
+- variance_value
+- status
+- created_at
+- resolved_at
+
+
+Investigation
+
+
+- id
+- company_id
+- exception_id
+- input_reference
+- findings
+- hypotheses
+- missing_evidence
+- suggested_actions
+- model_metadata
+- review_status
+- created_at
+
+
+Action
+
+
+- id
+- company_id
+- exception_id
+- investigation_id
+- title
+- description
+- owner
+- priority
+- due_date
+- status
+- completion_notes
+- created_at
+- updated_at
+
+
+ImpactObservation
+
+
+- id
+- company_id
+- action_id
+- metric_key
+- baseline_value
+- target_value
+- observed_value
+- observation_period
+- source_reference
+- verification_status
+- reviewer
+
+
+Additional production entities
+
+
+Include users, roles, workspaces or tenants, audit events, data sources and import jobs when implementing production functionality.
+
+
+Use foreign keys, appropriate indexes, validation and database constraints.
+
+
+16. REQUIRED DEMONSTRATION WORKFLOW
+
+
+The engineer must be able to demonstrate the following sequence without manually editing the source code between steps.
+
+
+1. Open the overview.
+2. Show the portfolio KPIs and company table.
+3. Select Apex Field Services.
+4. Compare revenue and EBITDA against plan.
+5. Open the EBITDA exception.
+6. Show the exact formula and configured threshold.
+7. Launch an AI-assisted investigation or the clearly labelled mock version.
+8. Review the facts, hypotheses and missing evidence.
+9. Create a proposed action.
+10. Assign an owner and due date.
+11. Update the action status.
+12. Add an impact record.
+13. Show that the impact remains unverified until supporting evidence is recorded.
+14. Navigate back to the overview and show the relevant counts updated.
+
+
+The workflow must be repeatable using the fictional demo dataset.
+
+
+17. ACCEPTANCE TESTS
+
+
+The demo is not complete until the following checks pass.
+
+
+Calculations
+
+
+- Revenue and EBITDA variance formulas return correct results.
+- Margin is calculated correctly.
+- Zero denominators do not cause crashes or misleading numbers.
+- Missing values remain missing.
+- Display rounding does not change the stored result.
+
+
+Data import
+
+
+- Valid CSV files import successfully.
+- Invalid rows generate useful errors.
+- Duplicate records are handled consistently.
+- The import summary matches the actual import outcome.
+
+
+Dashboard
+
+
+- KPI counts match the stored records.
+- Filters and search return the correct rows.
+- Company detail pages show the selected company.
+- Charts update when filters change.
+- Empty states work.
+
+
+Exceptions
+
+
+- Threshold changes affect exception generation consistently.
+- Each exception displays its triggering rule.
+- A resolved exception retains its history.
+- Invalid data does not silently create a false alert.
+
+
+AI investigation
+
+
+- Facts and hypotheses are separated.
+- Missing evidence is disclosed.
+- Invalid model output is handled safely.
+- API failure produces a useful error and retry option.
+- A mock investigation is clearly labelled.
+
+
+Actions and impact
+
+
+- Action edits persist.
+- Status changes update the interface.
+- Overdue actions are identified correctly.
+- Impact records distinguish targets from observed results.
+- Unverified results are never shown as verified.
+
+
+General
+
+
+- No dead buttons or broken navigation.
+- No sensitive API keys in frontend bundles.
+- No console errors during the standard demo workflow.
+- The fictional-data notice is visible.
+- The app remains usable at desktop and mobile widths.
+
+
+18. PRODUCTION REQUIREMENTS — NOT OPTIONAL BEFORE REAL CLIENT DATA
+
+
+The sales prototype must not be represented as ready for confidential PE financial information.
+
+
+Before production use, implement and verify:
+
+
+- Authentication and secure session management.
+- Role-based access control.
+- Workspace and tenant isolation.
+- Server-side authorisation on every sensitive request.
+- Encryption in transit and appropriate encryption at rest.
+- Secure secrets management.
+- Audit logs for data access and material changes.
+- Secure file upload, validation and storage.
+- Backup and recovery procedures.
+- Error monitoring and operational alerts.
+- Rate limiting and abuse protection.
+- Data retention and deletion controls.
+- Appropriate privacy, contractual and AI-provider controls.
+- Integration tests and security testing.
+- A documented deployment and rollback procedure.
+- Clear limitations for AI-generated analysis.
+- Human review of important decisions.
+
+
+Integrations with accounting, ERP, CRM or portfolio-company systems must be scoped separately. Do not claim an integration exists until it has been built and tested.
+
+
+19. DELIVERY PLAN
+
+
+Phase 1 — Foundation
+
+
+- Application shell.
+- Navigation and responsive layout.
+- Demo data and data model.
+- Overview and company detail pages.
+
+
+Phase 2 — Analytics
+
+
+- KPI calculations.
+- Data import and validation.
+- Charts, filters and exceptions.
+
+
+Phase 3 — Workflow
+
+
+- Investigation interface.
+- Action tracker.
+- Impact tracking.
+- Data provenance and methodology.
+
+
+Phase 4 — Demo hardening
+
+
+- Acceptance tests.
+- Error handling.
+- Visual polish.
+- Repeatable demo data reset.
+- Demo rehearsal.
+
+
+Phase 5 — Production discovery
+
+
+- Confirm real customer workflows.
+- Select data integrations.
+- Define security and access requirements.
+- Estimate production scope separately.
+
+
+Target a working sales prototype in approximately 5–10 working days for an experienced builder with a tightly controlled scope. This is an estimate, not a deadline guarantee.
+
+
+20. REQUIRED HANDOFF FROM THE ENGINEER
+
+
+Deliver:
+
+
+1. Working application and source code.
+2. Setup and deployment instructions.
+3. Demo login or access instructions, if applicable.
+4. Sample CSV files.
+5. Data schema documentation.
+6. KPI formula documentation.
+7. List of completed features.
+8. List of incomplete features and known bugs.
+9. Test results.
+10. AI-provider and infrastructure dependencies.
+11. Estimated production work still required.
+12. A recorded end-to-end demo.
+13. A clear statement identifying every mock feature versus every genuinely functional feature.
+
+
+FINAL DEFINITION OF DONE
+
+
+A user can import fictional data, review calculated portfolio performance, investigate a real rule-triggered exception, create and manage an action, record an observed outcome, and trace the key information back to its source—all in one working application.
+
+
+The application must not claim that the prototype is a production-ready enterprise platform or that it has generated financial benefits that have not been verified.

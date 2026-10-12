@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spec §3 palette: near-black, white, neutral greys, one muted accent.
+   Red / amber / green are for status and severity only. */
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --surface: 0 0% 100%;
+    --foreground: 220 15% 10%;
+    --muted: 220 12% 95%;
+    --muted-foreground: 220 8% 40%;
+    --border: 220 12% 88%;
+    --ring: 215 25% 35%;
+    --accent: 215 25% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --status-danger: 0 65% 42%;
+    --status-danger-bg: 0 70% 96%;
+    --status-warning: 32 85% 34%;
+    --status-warning-bg: 40 90% 94%;
+    --status-success: 145 50% 28%;
+    --status-success-bg: 140 45% 94%;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'tnum' 1, 'cv11' 1;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

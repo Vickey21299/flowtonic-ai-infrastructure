@@ -1,0 +1,12 @@
+{
+  "name": "flownetic-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:migrate": "node --env-file=.env scripts/db-setup.mjs",
+    "db:seed": "node --env-file=.env scripts/db-setup.mjs --seed"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}
