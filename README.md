@@ -1,4 +1,4 @@
-# Flowtonic 
+# Flowtonic
 
 **Portfolio intelligence for private-equity teams.** Import monthly company figures, calculate performance against plan, flag material variances, investigate them with AI assistance, assign corrective actions and track whether those actions produced measurable results.
 

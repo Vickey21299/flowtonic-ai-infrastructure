@@ -1,4 +1,4 @@
--- Flownetic — demo seed (all data fictional; USD millions, monthly periods).
+-- Flowtonic — demo seed (all data fictional; USD millions, monthly periods).
 --
 -- Re-runnable: clears every table, then reseeds in one transaction.
 -- Only raw facts are typed in here (companies, imported rows, rules, workflow records).

@@ -41,7 +41,7 @@ export function Header({ onOpenMobileNav }: HeaderProps) {
       </button>
 
       <Link to="/" className="text-base font-semibold tracking-tight text-foreground">
-        Flownetic
+        Flowtonic
       </Link>
 
       <span className="hidden h-5 w-px bg-border sm:block" aria-hidden />

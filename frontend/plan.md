@@ -1,4 +1,4 @@
-# Frontend Build Plan — Flownetic Portfolio Intelligence
+# Frontend Build Plan — Flowtonic Portfolio Intelligence
 
 ## Context
 

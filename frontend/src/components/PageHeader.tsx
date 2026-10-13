@@ -15,11 +15,11 @@ interface PageHeaderProps {
   className?: string
 }
 
-/** Page title block. Renders the page <h1 id="page-title"> and sets document.title to "<title> · Flownetic". */
+/** Page title block. Renders the page <h1 id="page-title"> and sets document.title to "<title> · Flowtonic". */
 export function PageHeader({ title, description, eyebrow, meta, actions, documentTitle, className }: PageHeaderProps) {
   const tabTitle = documentTitle ?? title
   useEffect(() => {
-    document.title = `${tabTitle} · Flownetic`
+    document.title = `${tabTitle} · Flowtonic`
   }, [tabTitle])
 
   return (

@@ -1,6 +1,6 @@
 # Database
 
-Schema, entities and relationships for Flownetic.
+Schema, entities and relationships for Flowtonic.
 
 > Status: **not implemented yet.** This folder currently contains design documents only.
 

@@ -1,6 +1,6 @@
 # Frontend
 
-The Flownetic web application: what the user sees and clicks.
+The Flowtonic web application: what the user sees and clicks.
 
 > Status: **not implemented yet.** This folder currently contains design documents only.
 

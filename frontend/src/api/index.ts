@@ -60,8 +60,8 @@ async function request<T>(method: 'GET' | 'POST' | 'PUT', path: string, params: 
     throw new ApiError(
       'provider_unavailable',
       timedOut
-        ? 'The Flownetic API did not respond in time. Please retry.'
-        : `Cannot reach the Flownetic API at ${BASE_URL}. Is the backend running?`,
+        ? 'The Flowtonic API did not respond in time. Please retry.'
+        : `Cannot reach the Flowtonic API at ${BASE_URL}. Is the backend running?`,
     )
   }
 

@@ -183,7 +183,7 @@ export const METRIC_LABELS: Record<MetricKey, string> = {
 
 // ---------- Sample CSV (Spec §6) ----------
 
-export const SAMPLE_CSV_FILE_NAME = 'flownetic_sample_2026-09.csv'
+export const SAMPLE_CSV_FILE_NAME = 'flowtonic_sample_2026-09.csv'
 
 /**
  * One deliberately invalid row, appended after the seed rows.

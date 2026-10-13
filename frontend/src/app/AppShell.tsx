@@ -46,7 +46,7 @@ export function AppShell() {
               aria-describedby={undefined}
             >
               <div className="flex h-14 items-center justify-between border-b border-border px-4">
-                <Dialog.Title className="text-base font-semibold">Flownetic</Dialog.Title>
+                <Dialog.Title className="text-base font-semibold">Flowtonic</Dialog.Title>
                 <Dialog.Close
                   className="rounded-md p-1.5 text-muted-foreground hover:bg-muted"
                   aria-label="Close navigation"

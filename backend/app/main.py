@@ -1,4 +1,4 @@
-"""FastAPI app: read endpoints, CSV import, investigations and workflow over the Flownetic database.
+"""FastAPI app: read endpoints, CSV import, investigations and workflow over the Flowtonic database.
 
     .venv/Scripts/uvicorn app.main:app --reload --port 8000
 """
@@ -42,7 +42,7 @@ async def lifespan(app: FastAPI):
 
 def create_app(settings: Settings | None = None) -> FastAPI:
     settings = settings or get_settings()
-    app = FastAPI(title="Flownetic API", version="0.2.0", lifespan=lifespan)
+    app = FastAPI(title="Flowtonic API", version="0.2.0", lifespan=lifespan)
     app.state.settings = settings
     app.state.ai_mode = settings.ai_mode
     app.add_middleware(

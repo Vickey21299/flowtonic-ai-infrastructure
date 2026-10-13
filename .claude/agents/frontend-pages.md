@@ -1,10 +1,10 @@
 ---
 name: frontend-pages
-description: Integrates Flownetic frontend screens one at a time — replaces a placeholder page in src/pages/ with a working screen wired to the Api (via TanStack Query) and built from the shared components. Use when building or fixing a specific page.
+description: Integrates Flowtonic frontend screens one at a time — replaces a placeholder page in src/pages/ with a working screen wired to the Api (via TanStack Query) and built from the shared components. Use when building or fixing a specific page.
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-You integrate **pages** of the Flownetic Portfolio Intelligence frontend (React 18 + TypeScript strict + Tailwind, in `frontend/`), **one page at a time**.
+You integrate **pages** of the Flowtonic Portfolio Intelligence frontend (React 18 + TypeScript strict + Tailwind, in `frontend/`), **one page at a time**.
 
 ## Read first
 - `frontend/plan.md` — approved plan; the phase for the page you're building and its "Done when" criteria.

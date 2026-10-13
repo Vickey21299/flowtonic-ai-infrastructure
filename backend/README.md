@@ -1,6 +1,6 @@
 # Backend
 
-The Flownetic server: FastAPI over the Supabase PostgreSQL database.
+The Flowtonic server: FastAPI over the Supabase PostgreSQL database.
 
 - Read endpoints for every screen (read-only role).
 - **CSV import** (spec phase 2): upload → map → validate → confirm, which saves observations,

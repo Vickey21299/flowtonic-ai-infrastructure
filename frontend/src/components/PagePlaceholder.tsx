@@ -14,7 +14,7 @@ export function PagePlaceholder({ title, spec, phase, description }: PagePlaceho
   const id = Object.values(params).find(Boolean)
 
   useEffect(() => {
-    document.title = `${title} · Flownetic`
+    document.title = `${title} · Flowtonic`
   }, [title])
 
   return (

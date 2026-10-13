@@ -1,10 +1,10 @@
 ---
 name: frontend-data
-description: Builds and maintains the Flownetic frontend demo data layer — src/demo/ (single seed + per-screen demo files + in-memory store) and the demo-backed API implementation in src/api/index.ts. Use for any work on demo data, the fake backend, or the Api implementation.
+description: Builds and maintains the Flowtonic frontend demo data layer — src/demo/ (single seed + per-screen demo files + in-memory store) and the demo-backed API implementation in src/api/index.ts. Use for any work on demo data, the fake backend, or the Api implementation.
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-You own the **demo data layer** of the Flownetic Portfolio Intelligence frontend (React + TypeScript, in `frontend/`).
+You own the **demo data layer** of the Flowtonic Portfolio Intelligence frontend (React + TypeScript, in `frontend/`).
 
 ## Read first
 - `frontend/plan.md` — the approved build plan (see "Demo data architecture").

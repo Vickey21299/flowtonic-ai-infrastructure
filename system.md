@@ -1,11 +1,11 @@
-# Flownetic Portfolio Intelligence — System Overview
+# Flowtonic Portfolio Intelligence — System Overview
 
 > Proposed design. Nothing is implemented yet. Requirements: [flowtonic.txt](flowtonic.txt).
 > Sales demo with fictional data. Not production-ready.
 
 ## What the system does
 
-Flownetic helps a private equity team see which portfolio companies are off plan, investigate why, assign corrective actions, and check whether those actions worked.
+Flowtonic helps a private equity team see which portfolio companies are off plan, investigate why, assign corrective actions, and check whether those actions worked.
 
 ```mermaid
 flowchart LR
