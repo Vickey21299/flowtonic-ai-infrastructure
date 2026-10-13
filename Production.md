@@ -1,4 +1,4 @@
-# Flownetic: Path to Production
+# Flowtonic: Path to Production
 
 **Status:** sales prototype (demo), built on fictional data only.
 **Purpose:** the work that remains between the current prototype and a product that can hold confidential private-equity data. It covers spec §18 (production requirements) in four main sections, **Error handling**, **Observability**, **Security** and **RBAC**, followed by a checklist that maps every §18 item to its section.
